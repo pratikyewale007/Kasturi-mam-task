@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block titlepage %}Product Registration Form{% endblock %}
+
+{% block content %}
+<form action="/" method="POST">
+    {% csrf_token %}
+    <h2>Product Registration Form</h2>
+    {% for field in form %}
+    {{ field.label_tag }}
+    {{ field }}
+    <br>
+    {% endfor %}
+    <button>Send</button>
+</form>
+{% endblock %}
